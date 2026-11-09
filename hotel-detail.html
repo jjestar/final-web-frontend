@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+            name="description"
+            content="BookingApp: explore illustrative stays, compare amenities and plan your next trip. A responsive student travel project."
+        />
+        <meta name="theme-color" content="#214fc6" />
+        <title>Stay details | BookingApp</title>
+        <link rel="icon" href="image/favicon.svg" type="image/svg+xml" />
+        <script src="js/theme-init.js"></script>
+        <link rel="stylesheet" href="css/site.css" />
+        <script src="js/common.js" defer></script>
+        <script src="js/hotels.js" defer></script>
+        <script src="js/auth.js" defer></script>
+        <script src="js/booking.js" defer></script>
+        <script src="js/weather.js" defer></script>
+    </head>
+    <body data-page="hotel-detail">
+        <a class="skip-link" href="#main-content">Skip to content</a>
+        <header class="site-header">
+            <div class="container header-inner">
+                <a href="index.html" class="brand" aria-label="BookingApp home"
+                    ><span class="brand-mark" data-icon="compass"></span>BookingApp<span
+                        class="brand-dot"
+                        >.</span
+                    ></a
+                >
+                <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+                    <a href="search-results.html" aria-current="page">Explore stays</a
+                    ><a href="services.html">Travel services</a><a href="about.html">About</a>
+                </nav>
+                <div class="header-actions">
+                    <button
+                        id="theme-toggle"
+                        class="icon-button"
+                        type="button"
+                        aria-label="Switch to dark mode"
+                        aria-pressed="false"
+                    >
+                        <span data-icon="moon"></span></button
+                    ><a class="account-link" href="login.html" data-account-link
+                        ><span data-icon="user"></span><span>Log in</span></a
+                    ><button
+                        id="menu-toggle"
+                        class="icon-button menu-toggle"
+                        type="button"
+                        aria-label="Toggle navigation"
+                        aria-controls="main-nav"
+                        aria-expanded="false"
+                    >
+                        <span data-icon="menu"></span>
+                    </button>
+                </div>
+            </div>
+        </header>
+        <main id="main-content">
+            <div class="container section" id="hotel-detail-content">
+                <a class="back-link" href="search-results.html">&larr; All stays</a>
+                <div class="page-heading detail-heading">
+                    <div>
+                        <p class="eyebrow" id="hotel-tag">Stay details</p>
+                        <h1 id="hotel-name">Stay details</h1>
+                        <p class="lead muted" id="hotel-location"></p>
+                    </div>
+                    <button
+                        class="button button-secondary"
+                        type="button"
+                        id="hotel-favorite"
+                        aria-pressed="false"
+                    >
+                        Save stay
+                    </button>
+                </div>
+                <section
+                    class="hotel-gallery"
+                    aria-label="Stay photo gallery"
+                    id="hotel-gallery"
+                ></section>
+                <div class="split-layout section">
+                    <div class="stack">
+                        <section aria-labelledby="about-stay-title">
+                            <p class="eyebrow">Stay overview</p>
+                            <h2 id="about-stay-title">About this stay</h2>
+                            <p class="lead" id="hotel-description"></p>
+                            <p class="muted">
+                                Review the amenities and local forecast before choosing a room and
+                                dates.
+                            </p>
+                        </section>
+                        <section class="panel" aria-labelledby="amenities-title">
+                            <h2 id="amenities-title">Amenities</h2>
+                            <ul id="hotel-amenities" class="amenities-grid"></ul>
+                        </section>
+                        <section
+                            class="weather-card panel"
+                            aria-labelledby="weather-title"
+                            aria-busy="true"
+                            id="weather-panel"
+                        >
+                            <div class="inline weather-heading">
+                                <div>
+                                    <p class="eyebrow">Current conditions and forecast</p>
+                                    <h2 id="weather-title">Local weather</h2>
+                                </div>
+                                <button
+                                    type="button"
+                                    id="weather-retry"
+                                    class="button button-ghost button-small"
+                                    hidden
+                                >
+                                    Try again
+                                </button>
+                            </div>
+                            <div id="weather-content" role="status" aria-live="polite">
+                                <p class="muted">Loading the local weather…</p>
+                            </div>
+                            <p class="weather-source muted">
+                                Weather data by
+                                <a
+                                    href="https://open-meteo.com/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >Open-Meteo</a
+                                >. Current conditions and the next three days; separate from your
+                                booking dates.
+                            </p>
+                        </section>
+                        <section aria-labelledby="good-to-know-title">
+                            <h2 id="good-to-know-title">Booking information</h2>
+                            <details>
+                                <summary>How does a demo booking work?</summary>
+                                <p>
+                                    Choose your dates and room, add your guest details, and save
+                                    your plan to your profile. Nothing is sent to a hotel and no
+                                    payment is taken.
+                                </p>
+                            </details>
+                            <details>
+                                <summary>Can I change my mind?</summary>
+                                <p>
+                                    You can cancel a saved demo booking from your profile, then
+                                    create another with your new dates. Your plans stay in this
+                                    browser.
+                                </p>
+                            </details>
+                            <details>
+                                <summary>Are these real hotel listings?</summary>
+                                <p>
+                                    These are illustrative stays built for our student project.
+                                    Names, prices, amenities, and photos demonstrate the booking
+                                    experience; they are not live availability.
+                                </p>
+                            </details>
+                        </section>
+                    </div>
+                    <aside class="sidebar">
+                        <div class="panel booking-callout stack">
+                            <p class="eyebrow">Nightly rate</p>
+                            <p>
+                                <strong class="price" id="hotel-price"></strong
+                                ><span class="muted"> / night</span>
+                            </p>
+                            <p id="hotel-breakfast" class="muted"></p>
+                            <a
+                                class="button button-primary"
+                                id="hotel-book-link"
+                                href="booking.html"
+                                >Plan this stay <span aria-hidden="true">&rarr;</span></a
+                            >
+                            <p class="small muted">
+                                Choose your room and see the full estimate before saving. No payment
+                                needed.
+                            </p>
+                            <div class="divider"></div>
+                            <p class="small muted">A frontend demo. All prices are in USD.</p>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container">
+                <div class="footer-top">
+                    <div>
+                        <a href="index.html" class="brand"
+                            ><span class="brand-mark" data-icon="compass"></span>BookingApp.</a
+                        >
+                        <p>
+                            Compare stays, check the weather,<br />and keep your travel plans
+                            together.
+                        </p>
+                    </div>
+                    <div class="footer-links">
+                        <h3>Explore</h3>
+                        <a href="search-results.html">All stays</a
+                        ><a href="hotel-detail.html?hotel=grand-palace">Featured stay</a
+                        ><a href="services.html">Travel services</a
+                        ><a href="booking.html">Plan a trip</a>
+                    </div>
+                    <div class="footer-links">
+                        <h3>Account and help</h3>
+                        <a href="about.html">Our team</a><a href="about.html#contact">Contact us</a
+                        ><a href="signup.html">Create an account</a
+                        ><a href="profile.html">My trips &amp; saved stays</a>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>© 2026 BookingApp · SE-2513</p>
+                    <p>Student project. Illustrative stays. No real reservations or payments.</p>
+                </div>
+            </div>
+        </footer>
+        <div id="notification" class="notification" role="status" aria-live="polite" hidden></div>
+        <noscript
+            ><p class="container">
+                Enable JavaScript for search, accounts, and demo bookings.
+            </p></noscript
+        >
+    </body>
+</html>

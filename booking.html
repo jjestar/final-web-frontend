@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+            name="description"
+            content="BookingApp: explore illustrative stays, compare amenities and plan your next trip. A responsive student travel project."
+        />
+        <meta name="theme-color" content="#214fc6" />
+        <title>Plan your stay | BookingApp</title>
+        <link rel="icon" href="image/favicon.svg" type="image/svg+xml" />
+        <script src="js/theme-init.js"></script>
+        <link rel="stylesheet" href="css/site.css" />
+        <script src="js/common.js" defer></script>
+        <script src="js/hotels.js" defer></script>
+        <script src="js/auth.js" defer></script>
+        <script src="js/booking.js" defer></script>
+    </head>
+    <body data-page="booking">
+        <a class="skip-link" href="#main-content">Skip to content</a>
+        <header class="site-header">
+            <div class="container header-inner">
+                <a href="index.html" class="brand" aria-label="BookingApp home"
+                    ><span class="brand-mark" data-icon="compass"></span>BookingApp<span
+                        class="brand-dot"
+                        >.</span
+                    ></a
+                >
+                <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+                    <a href="search-results.html" aria-current="page">Explore stays</a
+                    ><a href="services.html">Travel services</a><a href="about.html">About</a>
+                </nav>
+                <div class="header-actions">
+                    <button
+                        id="theme-toggle"
+                        class="icon-button"
+                        type="button"
+                        aria-label="Switch to dark mode"
+                        aria-pressed="false"
+                    >
+                        <span data-icon="moon"></span></button
+                    ><a class="account-link" href="login.html" data-account-link
+                        ><span data-icon="user"></span><span>Log in</span></a
+                    ><button
+                        id="menu-toggle"
+                        class="icon-button menu-toggle"
+                        type="button"
+                        aria-label="Toggle navigation"
+                        aria-controls="main-nav"
+                        aria-expanded="false"
+                    >
+                        <span data-icon="menu"></span>
+                    </button>
+                </div>
+            </div>
+        </header>
+        <main id="main-content">
+            <div class="container section" id="booking-content">
+                <a class="back-link" href="hotel-detail.html" id="booking-back-to-hotel"
+                    >&larr; Back to your stay</a
+                >
+                <div class="page-heading">
+                    <p class="eyebrow">Demo booking</p>
+                    <h1>Plan your stay</h1>
+                    <p class="lead muted">
+                        Choose dates, a room, and guest details, then save a demo booking to your
+                        profile. No reservation or payment is made.
+                    </p>
+                </div>
+                <div class="split-layout">
+                    <section class="panel" aria-labelledby="booking-form-title">
+                        <h2 id="booking-form-title" class="sr-only">Plan your stay</h2>
+                        <ol class="step-list" aria-label="Booking progress">
+                            <li aria-current="step"><span>01</span> Your stay</li>
+                            <li><span>02</span> Guest details</li>
+                            <li><span>03</span> Review</li>
+                        </ol>
+                        <form id="booking-form" novalidate>
+                            <fieldset class="booking-step" data-step="0">
+                                <legend tabindex="-1">Choose dates and a room</legend>
+                                <div class="field-grid">
+                                    <div class="field">
+                                        <label for="checkin">Check-in</label
+                                        ><input id="checkin" name="checkin" type="date" />
+                                        <p id="checkin-error" class="field-error"></p>
+                                    </div>
+                                    <div class="field">
+                                        <label for="checkout">Check-out</label
+                                        ><input id="checkout" name="checkout" type="date" />
+                                        <p id="checkout-error" class="field-error"></p>
+                                    </div>
+                                    <div class="field">
+                                        <label for="guests">Guests</label
+                                        ><select id="guests" name="guests">
+                                            <option value="1">1 guest</option>
+                                            <option value="2">2 guests</option>
+                                            <option value="3">3 guests</option>
+                                            <option value="4">4 guests</option>
+                                            <option value="5">5 guests</option>
+                                            <option value="6">6 guests</option>
+                                        </select>
+                                        <p id="guests-error" class="field-error"></p>
+                                    </div>
+                                    <div class="field">
+                                        <label for="room">Room</label
+                                        ><select id="room" name="room">
+                                            <option value="standard">Standard room</option>
+                                            <option value="deluxe">Deluxe room</option>
+                                            <option value="suite">Suite</option>
+                                        </select>
+                                        <p id="room-error" class="field-error"></p>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label for="service">Optional travel service</label
+                                    ><select id="service" name="service">
+                                        <option value="none">Just the stay</option>
+                                        <option value="transfer">
+                                            Airport transfer · $35 per booking
+                                        </option>
+                                        <option value="car">Car rental · $55 per day</option>
+                                        <option value="tour">
+                                            Guided city tour · $45 per guest
+                                        </option>
+                                    </select>
+                                    <p id="service-error" class="field-error"></p>
+                                </div>
+                                <p class="small muted">
+                                    Room rates are per room, per night for your selected party, up
+                                    to six guests. Car rental days follow the number of nights.
+                                </p>
+                            </fieldset>
+                            <fieldset class="booking-step" data-step="1" hidden>
+                                <legend tabindex="-1">Enter guest details</legend>
+                                <div class="field">
+                                    <label for="fullname">Full name</label
+                                    ><input
+                                        id="fullname"
+                                        name="fullname"
+                                        type="text"
+                                        autocomplete="name"
+                                        placeholder="Alex Morgan"
+                                    />
+                                    <p id="fullname-error" class="field-error"></p>
+                                </div>
+                                <div class="field-grid">
+                                    <div class="field">
+                                        <label for="email">Email address</label
+                                        ><input
+                                            id="email"
+                                            name="email"
+                                            type="text"
+                                            inputmode="email"
+                                            autocomplete="email"
+                                            placeholder="you@example.com"
+                                        />
+                                        <p id="email-error" class="field-error"></p>
+                                    </div>
+                                    <div class="field">
+                                        <label for="phone">Phone number</label
+                                        ><input
+                                            id="phone"
+                                            name="phone"
+                                            type="tel"
+                                            autocomplete="tel"
+                                            placeholder="+7 700 123 45 67"
+                                        />
+                                        <p id="phone-error" class="field-error"></p>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label for="notes"
+                                        >Anything else? <span class="muted">(optional)</span></label
+                                    ><textarea
+                                        id="notes"
+                                        name="notes"
+                                        rows="3"
+                                        placeholder="A quiet room, a late arrival…"
+                                    ></textarea>
+                                    <p id="notes-error" class="field-error"></p>
+                                </div>
+                                <p class="small muted">
+                                    Use sample contact details for this student project. Your plan
+                                    is saved only in this browser.
+                                </p>
+                            </fieldset>
+                            <fieldset class="booking-step" data-step="2" hidden>
+                                <legend tabindex="-1">Review your booking</legend>
+                                <dl class="booking-summary" id="booking-review"></dl>
+                                <div id="booking-account" class="account-notice"></div>
+                                <div class="field checkbox-field">
+                                    <label for="terms"
+                                        ><input id="terms" name="terms" type="checkbox" /> I
+                                        understand this saves a demo plan only. No hotel reservation
+                                        or payment is made.</label
+                                    >
+                                    <p id="terms-error" class="field-error"></p>
+                                </div>
+                            </fieldset>
+                            <p
+                                id="booking-status"
+                                class="form-status"
+                                role="status"
+                                aria-live="polite"
+                                tabindex="-1"
+                            ></p>
+                            <div class="inline booking-actions">
+                                <button
+                                    id="booking-back"
+                                    type="button"
+                                    class="button button-secondary"
+                                    hidden
+                                >
+                                    Back</button
+                                ><button
+                                    id="booking-next"
+                                    type="button"
+                                    class="button button-primary"
+                                >
+                                    Continue <span aria-hidden="true">&rarr;</span></button
+                                ><button
+                                    id="booking-confirm"
+                                    type="submit"
+                                    class="button button-primary"
+                                    hidden
+                                >
+                                    Save demo booking
+                                </button>
+                            </div>
+                        </form>
+                        <div id="booking-success" class="empty-state stack" hidden tabindex="-1">
+                            <span class="success-mark" aria-hidden="true">✓</span>
+                            <p class="eyebrow">Demo booking</p>
+                            <h2>Demo booking saved</h2>
+                            <p id="booking-success-details"></p>
+                            <p class="muted">
+                                You’ll find the details in your profile. This is a demo, so no
+                                actual reservation or payment was made.
+                            </p>
+                            <div class="inline">
+                                <a href="profile.html" class="button button-primary"
+                                    >View my trips <span aria-hidden="true">&rarr;</span></a
+                                ><a href="search-results.html" class="button button-secondary"
+                                    >Explore more stays</a
+                                >
+                            </div>
+                        </div>
+                    </section>
+                    <aside class="sidebar">
+                        <div class="card booking-preview">
+                            <img
+                                id="booking-hotel-image"
+                                src="image/1.jpg"
+                                alt=""
+                                class="image-cover"
+                            />
+                            <div class="panel stack">
+                                <p class="eyebrow" id="booking-hotel-location"></p>
+                                <h2 id="booking-hotel-name"></h2>
+                                <dl class="booking-summary" id="booking-cost"></dl>
+                                <p class="small muted">
+                                    Transparent demo pricing in USD. No added fees and no payment
+                                    details.
+                                </p>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container">
+                <div class="footer-top">
+                    <div>
+                        <a href="index.html" class="brand"
+                            ><span class="brand-mark" data-icon="compass"></span>BookingApp.</a
+                        >
+                        <p>
+                            Compare stays, check the weather,<br />and keep your travel plans
+                            together.
+                        </p>
+                    </div>
+                    <div class="footer-links">
+                        <h3>Explore</h3>
+                        <a href="search-results.html">All stays</a
+                        ><a href="hotel-detail.html?hotel=grand-palace">Featured stay</a
+                        ><a href="services.html">Travel services</a
+                        ><a href="booking.html">Plan a trip</a>
+                    </div>
+                    <div class="footer-links">
+                        <h3>Account and help</h3>
+                        <a href="about.html">Our team</a><a href="about.html#contact">Contact us</a
+                        ><a href="signup.html">Create an account</a
+                        ><a href="profile.html">My trips &amp; saved stays</a>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>© 2026 BookingApp · SE-2513</p>
+                    <p>Student project. Illustrative stays. No real reservations or payments.</p>
+                </div>
+            </div>
+        </footer>
+        <div id="notification" class="notification" role="status" aria-live="polite" hidden></div>
+        <noscript
+            ><p class="container">
+                Enable JavaScript for search, accounts, and demo bookings.
+            </p></noscript
+        >
+    </body>
+</html>

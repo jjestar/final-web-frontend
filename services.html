@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+            name="description"
+            content="BookingApp: explore illustrative stays, compare amenities and plan your next trip. A responsive student travel project."
+        />
+        <meta name="theme-color" content="#214fc6" />
+        <title>Transport and tours | BookingApp</title>
+        <link rel="icon" href="image/favicon.svg" type="image/svg+xml" />
+        <script src="js/theme-init.js"></script>
+        <link rel="stylesheet" href="css/site.css" />
+        <script src="js/common.js" defer></script>
+        <script src="js/hotels.js" defer></script>
+        <script src="js/auth.js" defer></script>
+        <script src="js/about-services.js" defer></script>
+    </head>
+    <body data-page="services">
+        <a class="skip-link" href="#main-content">Skip to content</a>
+        <header class="site-header">
+            <div class="container header-inner">
+                <a href="index.html" class="brand" aria-label="BookingApp home"
+                    ><span class="brand-mark" data-icon="compass"></span>BookingApp<span
+                        class="brand-dot"
+                        >.</span
+                    ></a
+                >
+                <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+                    <a href="search-results.html">Explore stays</a
+                    ><a href="services.html" aria-current="page">Travel services</a
+                    ><a href="about.html">About</a>
+                </nav>
+                <div class="header-actions">
+                    <button
+                        id="theme-toggle"
+                        class="icon-button"
+                        type="button"
+                        aria-label="Switch to dark mode"
+                        aria-pressed="false"
+                    >
+                        <span data-icon="moon"></span></button
+                    ><a class="account-link" href="login.html" data-account-link
+                        ><span data-icon="user"></span><span>Log in</span></a
+                    ><button
+                        id="menu-toggle"
+                        class="icon-button menu-toggle"
+                        type="button"
+                        aria-label="Toggle navigation"
+                        aria-controls="main-nav"
+                        aria-expanded="false"
+                    >
+                        <span data-icon="menu"></span>
+                    </button>
+                </div>
+            </div>
+        </header>
+        <main id="main-content">
+            <section class="container section page-heading">
+                <p class="eyebrow">Travel services</p>
+                <h1>Transport and tours</h1>
+                <p class="lead">
+                    Compare transfer, car rental, and tour prices, then add a service to your demo
+                    stay.
+                </p>
+            </section>
+
+            <section class="container section" aria-labelledby="services-heading">
+                <div class="page-heading">
+                    <h2 id="services-heading">Choose a travel service</h2>
+                    <p class="muted">Three optional services with fixed demo rates in USD.</p>
+                </div>
+                <div class="grid-3">
+                    <article class="card service-card">
+                        <img
+                            class="image-cover"
+                            src="image/destination-7.jpg"
+                            alt="A hotel arrival area and pool lit up at dusk"
+                            width="640"
+                            height="420"
+                            loading="lazy"
+                        />
+                        <div class="stack service-content">
+                            <p class="eyebrow">Airport to hotel</p>
+                            <h3>Airport transfer</h3>
+                            <p class="muted">
+                                Add a one-way arrival transfer from the airport to your hotel to
+                                your demo itinerary.
+                            </p>
+                            <p>
+                                <span class="price">$35</span>
+                                <span class="muted">one-time fee</span>
+                            </p>
+                            <a
+                                class="button button-secondary"
+                                href="booking.html?service=transfer"
+                                data-service-booking="transfer"
+                                >Choose a transfer</a
+                            >
+                        </div>
+                    </article>
+                    <article class="card service-card">
+                        <img
+                            class="image-cover"
+                            src="image/destination-6.jpg"
+                            alt="A camera and notebook on a map, ready for a day of exploring"
+                            width="640"
+                            height="420"
+                            loading="lazy"
+                        />
+                        <div class="stack service-content">
+                            <p class="eyebrow">Travel at your own pace</p>
+                            <h3>Car rental</h3>
+                            <p class="muted">
+                                Plan independent day trips with a rental car for the duration of
+                                your stay.
+                            </p>
+                            <p><span class="price">$55</span> <span class="muted">per day</span></p>
+                            <a
+                                class="button button-secondary"
+                                href="booking.html?service=car"
+                                data-service-booking="car"
+                                >Choose a rental</a
+                            >
+                        </div>
+                    </article>
+                    <article class="card service-card">
+                        <img
+                            class="image-cover"
+                            src="image/destination-4.jpg"
+                            alt="An ornate bridge and city lights beside the river at sunset"
+                            width="640"
+                            height="420"
+                            loading="lazy"
+                        />
+                        <div class="stack service-content">
+                            <p class="eyebrow">Explore with a guide</p>
+                            <h3>Guided city tour</h3>
+                            <p class="muted">
+                                Include a city tour in your plans, with a price for every traveler
+                                in your booking.
+                            </p>
+                            <p>
+                                <span class="price">$45</span> <span class="muted">per person</span>
+                            </p>
+                            <a
+                                class="button button-secondary"
+                                href="booking.html?service=tour"
+                                data-service-booking="tour"
+                                >Choose a tour</a
+                            >
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section
+                id="estimate"
+                class="container section split-layout"
+                aria-labelledby="estimate-heading"
+            >
+                <div class="panel">
+                    <p class="eyebrow">Estimate the cost</p>
+                    <h2 id="estimate-heading">Calculate a service estimate</h2>
+                    <p class="muted">
+                        Choose a service and calculate its cost before adding it to a demo booking.
+                    </p>
+                    <form id="service-estimate-form" class="stack" novalidate>
+                        <div class="field-grid">
+                            <div class="field">
+                                <label for="service-choice">Travel service</label>
+                                <select
+                                    id="service-choice"
+                                    name="service"
+                                    aria-describedby="service-choice-error"
+                                >
+                                    <option value="transfer">Airport transfer</option>
+                                    <option value="car">Car rental</option>
+                                    <option value="tour">Guided city tour</option>
+                                </select>
+                                <p id="service-choice-error" class="field-error"></p>
+                            </div>
+                            <div id="service-quantity-field" class="field" hidden>
+                                <label for="service-quantity" id="quantity-label"
+                                    >Number of days</label
+                                >
+                                <input
+                                    id="service-quantity"
+                                    name="quantity"
+                                    type="text"
+                                    inputmode="numeric"
+                                    value="1"
+                                    aria-describedby="service-quantity-help service-quantity-error"
+                                />
+                                <small id="service-quantity-help" class="muted"
+                                    >Enter a whole number from 1 to 30.</small
+                                >
+                                <p id="service-quantity-error" class="field-error"></p>
+                            </div>
+                        </div>
+                        <p id="service-rate" class="muted">
+                            $35 for one arrival transfer. This is a flat fee.
+                        </p>
+                        <button class="button button-primary" type="submit">
+                            Calculate estimate
+                        </button>
+                        <p
+                            id="service-estimate-status"
+                            class="form-status"
+                            role="status"
+                            aria-live="polite"
+                        ></p>
+                    </form>
+                </div>
+                <aside class="panel" aria-labelledby="estimate-summary-heading">
+                    <p class="eyebrow">Cost breakdown</p>
+                    <h3 id="estimate-summary-heading">Service total</h3>
+                    <div id="estimate-empty" class="empty-state">
+                        <p>Calculate a service to see its total here.</p>
+                        <p class="muted">Hotel accommodation is priced separately.</p>
+                    </div>
+                    <div
+                        id="service-estimate-result"
+                        class="stack"
+                        role="status"
+                        aria-live="polite"
+                        hidden
+                    >
+                        <p id="estimate-description"></p>
+                        <p id="estimate-total" class="price"></p>
+                        <p class="muted">Estimated service total in USD.</p>
+                        <a
+                            id="estimate-continue"
+                            class="button button-primary"
+                            href="booking.html?service=transfer"
+                            >Continue to booking</a
+                        >
+                        <p class="muted">
+                            Your service choice carries over. The final estimate uses your booking
+                            dates and number of guests.
+                        </p>
+                    </div>
+                    <div class="divider"></div>
+                    <p class="muted">
+                        Student project demo. No service is reserved and no payment is taken.
+                    </p>
+                </aside>
+            </section>
+
+            <section class="container section grid-2" aria-labelledby="faq-heading">
+                <div class="stack">
+                    <p class="eyebrow">Good to know</p>
+                    <h2 id="faq-heading">Service questions</h2>
+                    <p class="muted">
+                        Keep your itinerary simple, and check the full estimate before confirming
+                        your demo reservation.
+                    </p>
+                    <a class="button button-ghost" href="about.html#contact"
+                        >Try the contact form</a
+                    >
+                </div>
+                <div class="stack">
+                    <details class="panel">
+                        <summary>What does the transfer price cover?</summary>
+                        <p>
+                            The $35 flat fee represents one arrival transfer from the airport to the
+                            selected hotel. It is added once to the demo booking, regardless of the
+                            number of nights.
+                        </p>
+                    </details>
+                    <details class="panel">
+                        <summary>How are rental days calculated?</summary>
+                        <p>
+                            Car rental costs $55 per day. In a booking, the number of rental days
+                            matches the number of nights between check-in and check-out. For
+                            example, a three-night stay adds $165.
+                        </p>
+                    </details>
+                    <details class="panel">
+                        <summary>How much is a tour for my group?</summary>
+                        <p>
+                            The guided city tour costs $45 per person. A booking for two guests adds
+                            $90. The estimator lets you compare a different group size before
+                            continuing.
+                        </p>
+                    </details>
+                    <details class="panel">
+                        <summary>Can I book a service on its own?</summary>
+                        <p>
+                            Travel extras are part of a hotel booking in this demo. Choose one
+                            service with your stay, or continue without an extra. All reservations
+                            are stored only in your browser.
+                        </p>
+                    </details>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container">
+                <div class="footer-top">
+                    <div>
+                        <a href="index.html" class="brand"
+                            ><span class="brand-mark" data-icon="compass"></span>BookingApp.</a
+                        >
+                        <p>
+                            Compare stays, check the weather,<br />and keep your travel plans
+                            together.
+                        </p>
+                    </div>
+                    <div class="footer-links">
+                        <h3>Explore</h3>
+                        <a href="search-results.html">All stays</a
+                        ><a href="hotel-detail.html?hotel=grand-palace">Featured stay</a
+                        ><a href="services.html">Travel services</a
+                        ><a href="booking.html">Plan a trip</a>
+                    </div>
+                    <div class="footer-links">
+                        <h3>Account and help</h3>
+                        <a href="about.html">Our team</a><a href="about.html#contact">Contact us</a
+                        ><a href="signup.html">Create an account</a
+                        ><a href="profile.html">My trips &amp; saved stays</a>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>© 2026 BookingApp · SE-2513</p>
+                    <p>Student project. Illustrative stays. No real reservations or payments.</p>
+                </div>
+            </div>
+        </footer>
+        <div id="notification" class="notification" role="status" aria-live="polite" hidden></div>
+        <noscript
+            ><p class="container">
+                Enable JavaScript for search, accounts, and demo bookings.
+            </p></noscript
+        >
+    </body>
+</html>
