@@ -2,7 +2,7 @@ BookingApp — Final Project
 Group: SE-2513
 Team: Allazhar Aldongarov, Dias Serikov, Yerkenov Abylay
 
-LIVE WEBSITE: https://aishhko-final.vercel.app
+LIVE WEBSITE: https://jjestar.github.io/final-web-frontend/
 REPOSITORY: https://github.com/jjestar/final-web-frontend
 
 PURPOSE
@@ -123,11 +123,12 @@ These checks cover the local build; publishing still requires updating hosting.
 
 HOSTING
 Repository: https://github.com/jjestar/final-web-frontend
-Production website: https://aishhko-final.vercel.app
-The current repository lists Vercel as its website; GitHub Pages is not enabled.
-The entry point is index.html. The project is static and needs no build step.
-Push completed changes to main, then verify that the Vercel production deployment
-has updated successfully before sharing the website for assessment.
+Production website: https://jjestar.github.io/final-web-frontend/
+GitHub Pages publishes the main branch from the repository root. The .nojekyll
+file keeps the static files served directly; no build command or backend is needed.
+The entry point is index.html. Relative links work under /final-web-frontend/.
+Push completed changes to main, then wait for the Pages deployment to finish
+and verify the live website before sharing it for assessment.
 
 TEAM
 The original project records these roles:
