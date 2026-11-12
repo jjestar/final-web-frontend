@@ -2,8 +2,8 @@ BookingApp — Final Project
 Group: SE-2513
 Team: Allazhar Aldongarov, Dias Serikov, Yerkenov Abylay
 
-LIVE WEBSITE: https://jjestar.github.io/web/
-REPOSITORY: https://github.com/jjestar/web
+LIVE WEBSITE: https://aishhko-final.vercel.app
+REPOSITORY: https://github.com/jjestar/final-web-frontend
 
 PURPOSE
 A responsive travel website for comparing illustrative hotel stays and planning
@@ -93,29 +93,41 @@ image/                   Existing local team/travel photos and SVG favicon
 archive/                 Previous assignment reports and explanation (historical)
 
 DESIGN AND ACCESSIBILITY
-CSS Grid and Flexbox; responsive layouts; persistent light/dark semantic colors;
-visible focus; labelled form controls; skip link; mobile navigation with Escape;
-aria-live feedback; native keyboard-friendly FAQ; reduced-motion support.
-Shared spacing follows a 4px rhythm with small 2px control adjustments. Prices
-use tabular figures. Hover feedback changes color without moving hotel cards;
-button press feedback respects reduced motion. Form boundaries have a separate
-contrast token. Error notices stay visible until dismissed, and mobile menu
-focus enters its first link. Theme changes suppress intermediate transitions.
-No third-party UI framework, external font, tracking script or backend required.
+The approved Assignment 6-inspired design is applied to all nine pages: dark
+navigation and footer, a cool grey background, white cards and blue actions.
+Home uses the original beach/mountains/city triptych and a full-width search.
+Search results, hotel details, booking, services, team, accounts and profile
+share the same card, form and typography rules. Arial is used throughout.
+CSS Grid and Flexbox provide responsive layouts. Light/dark modes persist in
+localStorage. Forms retain JavaScript validation, labelled controls, inline
+errors, visible keyboard focus and aria-live feedback. Navigation supports
+Escape, and transitions respect reduced motion. The mobile newsletter form
+stacks its email field and button without overlap. Essential comments remain.
+The original approved sample is retained separately in design-preview/.
+No third-party UI framework, external font, tracking script or backend is needed.
 
 VERIFICATION
-Browser tests covered all 9 pages at 360, 390, 768 and 1440 CSS pixels in light
-and dark modes; no horizontal overflow, missing local images or JS errors were
-found. Tested the full signup/login/profile/booking/cancel journey, invalid
-forms, filters, persistence, service estimates, contact draft/download and
-Open-Meteo success plus simulated failure/retry. Test data is not bundled.
-An additional 320px layout check passed on all nine pages. Measured field-border
-contrast: 3.67:1 light and 4.46:1 dark; primary-button text: 7.00:1 and 8.42:1.
+After the design migration, eleven browser regression groups passed with no
+uncaught JavaScript errors. Tests covered signup/login/logout/profile, password
+and field validation, search/filter/sort, favourites and guest-to-account
+migration, full booking/review/confirmation/cancellation, all service estimates,
+contact draft persistence/download/clear, newsletter, theme persistence and
+mobile navigation. Live Open-Meteo weather and forced failure/retry also passed.
+Grand Palace, Deluxe room, three nights and car rental totals $645.
+All nine pages were checked at 320, 390, 768 and 1440 CSS pixels in both themes
+for horizontal overflow, broken images and collapsed controls; none were found.
+The newsletter was also checked at 360 and 600px for overlapping controls.
+Measured field-border contrast: 3.13:1 light and 4.86:1 dark; primary-button text:
+5.54:1 light and 8.12:1 dark. Test accounts exist only in isolated test browsers.
+These checks cover the local build; publishing still requires updating hosting.
 
 HOSTING
-GitHub Pages serves the main branch from the repository root. .nojekyll keeps
-static files served directly. Open index.html as the entry point. Relative links
-work under /web/. Push completed changes to main to update the hosted website.
+Repository: https://github.com/jjestar/final-web-frontend
+Production website: https://aishhko-final.vercel.app
+The current repository lists Vercel as its website; GitHub Pages is not enabled.
+The entry point is index.html. The project is static and needs no build step.
+Push completed changes to main, then verify that the Vercel production deployment
+has updated successfully before sharing the website for assessment.
 
 TEAM
 The original project records these roles:

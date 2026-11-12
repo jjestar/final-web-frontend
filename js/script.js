@@ -22,8 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const data = Object.fromEntries(new FormData(home));
             data.destination = data.destination.trim();
             const errors = App.dateErrors(data.checkin, data.checkout);
-            if (!data.destination)
-                errors.destination = 'Choose a city, country or hotel to explore.';
+            if (!data.destination) errors.destination = 'Choose a city, country or hotel to explore.';
             if (!/^[1-6]$/.test(data.guests)) errors.guests = 'Choose between 1 and 6 guests.';
             const status = document.getElementById('home-search-status');
             if (App.errors(home, errors)) {
@@ -88,11 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (['recommended', 'price-asc', 'price-desc', 'rating'].includes(saved.sort))
             sort.value = saved.sort;
     }
-    if (
-        trip.checkin &&
-        trip.checkout &&
-        !Object.keys(App.dateErrors(trip.checkin, trip.checkout)).length
-    ) {
+    if (trip.checkin && trip.checkout && !Object.keys(App.dateErrors(trip.checkin, trip.checkout)).length) {
         const guests = /^[1-6]$/.test(String(trip.guests)) ? trip.guests : 2;
         document.getElementById('search-trip-context').textContent =
             `Your dates: ${trip.checkin} — ${trip.checkout} · ${guests} ${Number(guests) === 1 ? 'guest' : 'guests'}. Dates carry through to your booking.`;
@@ -148,7 +143,18 @@ document.addEventListener('DOMContentLoaded', () => {
                           guests: trip.guests
                       });
                       const saved = favorites.includes(hotel.id);
-                      return `<article class="card stay-card"><div class="stay-image"><a href="${App.escape(href)}" tabindex="-1" aria-hidden="true"><img src="${App.escape(hotel.image)}" alt="${App.escape(hotel.photos[0].alt)}" width="480" height="280" loading="lazy"></a><span class="badge">${App.escape(hotel.tag || hotel.rating + '-star stay')}</span><button type="button" class="icon-button favorite-button" data-save="${hotel.id}" aria-label="${saved ? 'Unsave' : 'Save'} ${App.escape(hotel.name)}" aria-pressed="${saved}">${App.icon('heart')}</button></div><div class="stay-body"><p class="stay-location">${App.icon('pin')}${highlight(hotel.location, state.query)}</p><h3><a href="${App.escape(href)}">${highlight(hotel.name, state.query)}</a></h3><p class="description">${highlight(hotel.description, state.query)}</p><div class="stay-amenities"><span>${hotel.rating}-star category</span>${hotel.wifi ? '<span>Wi-Fi</span>' : ''}${hotel.pool ? '<span>Pool</span>' : ''}${hotel.breakfast ? '<span>Breakfast</span>' : ''}</div><div class="stay-bottom"><div class="price">${App.money(hotel.price)} <small>/ night</small></div><a class="button button-secondary button-small" href="${App.escape(href)}">View stay ${App.icon('arrow')}</a></div></div></article>`;
+                      return `<article class="stay-card">
+    <div class="stay-image"><a href="${App.escape(href)}" tabindex="-1" aria-hidden="true"><img src="${App.escape(hotel.image)}" alt="${App.escape(hotel.photos[0].alt)}" width="480" height="280" loading="lazy"></a></div>
+    <div class="stay-body">
+        <div class="stay-copy">
+            <p class="stay-location">${highlight(hotel.location, state.query)}</p>
+            <div class="stay-title"><h3><a href="${App.escape(href)}">${highlight(hotel.name, state.query)}</a></h3><button type="button" class="icon-button favorite-button" data-save="${hotel.id}" aria-label="${saved ? 'Unsave' : 'Save'} ${App.escape(hotel.name)}" aria-pressed="${saved}">${App.icon('heart')}</button></div>
+            <p class="description">${highlight(hotel.description, state.query)}</p>
+            <div class="stay-amenities"><span>${hotel.rating}-star category</span>${hotel.wifi ? '<span>Wi-Fi</span>' : ''}${hotel.pool ? '<span>Pool</span>' : ''}${hotel.breakfast ? '<span>Breakfast</span>' : ''}</div>
+        </div>
+        <div class="stay-bottom"><div class="price">${App.money(hotel.price)} <small>/ night</small></div><a class="button button-secondary button-small" href="${App.escape(href)}">View stay ${App.icon('arrow')}</a></div>
+    </div>
+</article>`;
                   })
                   .join('')
             : '<div class="empty-state" style="grid-column:1/-1"><h3>No matching stays</h3><p>Try another destination or clear the filters.</p><button class="button button-primary" type="button" id="clear-empty">Clear filters</button></div>';
@@ -158,9 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 try {
                     const active = App.toggleFavorite(button.dataset.save);
                     App.notify(
-                        active
-                            ? 'Stay saved. Find it in My trips.'
-                            : 'Stay removed from saved stays.'
+                        active ? 'Stay saved. Find it in My trips.' : 'Stay removed from saved stays.'
                     );
                     if (state['saved-only']) {
                         render();
@@ -169,10 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     } else {
                         button.setAttribute('aria-pressed', String(active));
                         const hotel = hotelsDatabase.find((h) => h.id === button.dataset.save);
-                        button.setAttribute(
-                            'aria-label',
-                            `${active ? 'Unsave' : 'Save'} ${hotel.name}`
-                        );
+                        button.setAttribute('aria-label', `${active ? 'Unsave' : 'Save'} ${hotel.name}`);
                     }
                 } catch (error) {
                     App.notify(error.message, 'error');

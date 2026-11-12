@@ -26,9 +26,12 @@ window.hotelsDatabase = [
             'City views'
         ],
         photos: [
-            { src: 'image/1.jpg', alt: 'Illustrative city hotel exterior' },
-            { src: 'image/3.jpg', alt: 'Illustrative guest bedroom' },
-            { src: 'image/2.jpg', alt: 'Illustrative hotel swimming pool' }
+            {
+                src: 'image/1.jpg',
+                alt: 'Illustrative hotel room with floor-to-ceiling windows and city views'
+            },
+            { src: 'image/3.jpg', alt: 'Illustrative guest bedroom with a double bed' },
+            { src: 'image/2.jpg', alt: 'Illustrative outdoor pool with shaded loungers' }
         ]
     },
     {
@@ -57,9 +60,15 @@ window.hotelsDatabase = [
             'Air conditioning'
         ],
         photos: [
-            { src: 'image/destination-8.jpg', alt: 'Illustrative resort pool' },
-            { src: 'image/destination-9.jpg', alt: 'Illustrative resort grounds' },
-            { src: 'image/destination-3.jpg', alt: 'Illustrative contemporary hotel room' }
+            {
+                src: 'image/destination-8.jpg',
+                alt: 'Illustrative resort courtyard with palms and a pool under a pink sky'
+            },
+            {
+                src: 'image/destination-9.jpg',
+                alt: 'Illustrative poolside terrace beside a wooden resort building'
+            },
+            { src: 'image/3.jpg', alt: 'Illustrative guest bedroom with a double bed' }
         ]
     },
     {
@@ -73,7 +82,7 @@ window.hotelsDatabase = [
         rating: 4,
         description:
             'A central Almaty base with Wi-Fi, a work desk, and tea and coffee. A practical option for city visits and mountain day trips.',
-        image: 'image/destination-3.jpg',
+        image: 'image/3.jpg',
         wifi: true,
         pool: false,
         breakfast: false,
@@ -88,9 +97,12 @@ window.hotelsDatabase = [
             'Tea and coffee'
         ],
         photos: [
-            { src: 'image/destination-3.jpg', alt: 'Illustrative contemporary hotel bedroom' },
-            { src: 'image/3.jpg', alt: 'Illustrative comfortable guest room' },
-            { src: 'image/destination-2.jpg', alt: 'Mountain scenery inspiring an Almaty getaway' }
+            { src: 'image/3.jpg', alt: 'Illustrative guest bedroom with a double bed' },
+            {
+                src: 'image/1.jpg',
+                alt: 'Illustrative hotel room with floor-to-ceiling windows and city views'
+            },
+            { src: 'image/destination-6.jpg', alt: 'Travel planning with a map, notebook, and camera' }
         ]
     },
     {
@@ -119,9 +131,12 @@ window.hotelsDatabase = [
             'Tea and coffee'
         ],
         photos: [
-            { src: 'image/destination-4.jpg', alt: 'Paris city scenery' },
-            { src: 'image/3.jpg', alt: 'Illustrative Paris stay bedroom' },
-            { src: 'image/destination-3.jpg', alt: 'Illustrative contemporary guest room' }
+            { src: 'image/destination-4.jpg', alt: 'An illuminated bridge over the Seine in Paris at dusk' },
+            { src: 'image/3.jpg', alt: 'Illustrative guest bedroom with a double bed' },
+            {
+                src: 'image/1.jpg',
+                alt: 'Illustrative hotel room with floor-to-ceiling windows and city views'
+            }
         ]
     },
     {
@@ -150,9 +165,9 @@ window.hotelsDatabase = [
             'On-site restaurant'
         ],
         photos: [
-            { src: 'image/destination-5.jpg', alt: 'Dubai city skyline' },
-            { src: 'image/2.jpg', alt: 'Illustrative hotel pool' },
-            { src: 'image/destination-3.jpg', alt: 'Illustrative Dubai stay guest room' }
+            { src: 'image/destination-5.jpg', alt: 'Dubai skyline with the Burj Khalifa in warm sunlight' },
+            { src: 'image/2.jpg', alt: 'Illustrative outdoor pool with shaded loungers' },
+            { src: 'image/3.jpg', alt: 'Illustrative guest bedroom with a double bed' }
         ]
     },
     {
@@ -181,9 +196,15 @@ window.hotelsDatabase = [
             'Air conditioning'
         ],
         photos: [
-            { src: 'image/destination-1.jpg', alt: 'Tropical beach inspiring a Maldives escape' },
-            { src: 'image/destination-8.jpg', alt: 'Illustrative island resort pool' },
-            { src: 'image/3.jpg', alt: 'Illustrative resort bedroom' }
+            {
+                src: 'image/destination-1.jpg',
+                alt: 'Illustrative tropical beach with turquoise water under a pastel sky'
+            },
+            {
+                src: 'image/destination-8.jpg',
+                alt: 'Illustrative resort courtyard with palms and a pool under a pink sky'
+            },
+            { src: 'image/3.jpg', alt: 'Illustrative guest bedroom with a double bed' }
         ]
     }
 ];

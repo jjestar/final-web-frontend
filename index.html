@@ -7,7 +7,7 @@
             name="description"
             content="BookingApp: explore illustrative stays, compare amenities and plan your next trip. A responsive student travel project."
         />
-        <meta name="theme-color" content="#214fc6" />
+        <meta name="theme-color" content="#212529" />
         <title>Compare stays and plan a trip | BookingApp</title>
         <link rel="icon" href="image/favicon.svg" type="image/svg+xml" />
         <script src="js/theme-init.js"></script>
@@ -21,15 +21,14 @@
         <a class="skip-link" href="#main-content">Skip to content</a>
         <header class="site-header">
             <div class="container header-inner">
-                <a href="index.html" class="brand" aria-label="BookingApp home"
-                    ><span class="brand-mark" data-icon="compass"></span>BookingApp<span
-                        class="brand-dot"
-                        >.</span
-                    ></a
-                >
+                <a href="index.html" class="brand" aria-label="BookingApp home">BookingApp</a>
                 <nav id="main-nav" class="main-nav" aria-label="Main navigation">
-                    <a href="search-results.html">Explore stays</a
-                    ><a href="services.html">Travel services</a><a href="about.html">About</a>
+                    <a href="index.html" aria-current="page">Home</a>
+                    <a href="search-results.html">Search</a>
+                    <a href="hotel-detail.html?hotel=grand-palace">Hotel details</a>
+                    <a href="booking.html">Booking</a>
+                    <a href="services.html">Services</a>
+                    <a href="about.html">About us</a>
                 </nav>
                 <div class="header-actions">
                     <button
@@ -56,40 +55,22 @@
             </div>
         </header>
         <main id="main-content">
-            <section class="container home-hero" aria-labelledby="hero-heading">
-                <div class="hero-copy">
-                    <p class="eyebrow">From Astana to the Maldives</p>
-                    <h1 id="hero-heading">Compare stays<br />Plan your trip</h1>
-                    <p class="lead">
-                        Compare hotels in six destinations, check the weather, and save a demo trip
-                        with clear pricing.
-                    </p>
-                    <div class="hero-note">
-                        <span data-icon="compass"></span
-                        ><span>Six destinations · Prices in USD</span>
-                    </div>
+            <section class="container assignment-hero" aria-labelledby="find-heading">
+                <div class="hero-title">
+                    <h1 id="find-heading">Explore Popular Destinations</h1>
+                    <p class="muted">Find a place to stay, from city breaks to a few days by the sea.</p>
                 </div>
-                <div class="hero-visual">
-                    <img
-                        class="hero-photo"
-                        src="image/destination-2.jpg"
-                        alt="Turquoise alpine lake framed by mountains"
-                        width="600"
-                        height="480"
-                        fetchpriority="high"
-                    />
-                    <div class="hero-caption">
-                        <span data-icon="pin"></span>
-                        <div>
-                            <strong>City stays and island escapes</strong>
-                            <p>Explore six demo destinations.</p>
-                        </div>
-                    </div>
+                <div class="triptych">
+                    <img src="image/destination-1.jpg" alt="Sunlight over a tropical beach" width="600" height="400" fetchpriority="high" />
+                    <img src="image/destination-2.jpg" alt="An alpine lake surrounded by mountains" width="600" height="400" />
+                    <img src="image/destination-3.jpg" alt="A city skyline beside the water" width="600" height="400" />
+                    <p class="photo-caption">Beach, Mountains, and Comfort</p>
                 </div>
-            </section>
-            <section class="container" aria-labelledby="find-heading">
                 <div class="search-panel">
-                    <h2 id="find-heading">Choose your destination and dates</h2>
+                    <div class="search-heading">
+                        <h2>Where would you like to go?</h2>
+                        <p class="search-footnote">Six destinations · All prices in USD</p>
+                    </div>
                     <form id="home-search" novalidate>
                         <div class="search-grid">
                             <div class="field">
@@ -130,7 +111,7 @@
                                 </select>
                             </div>
                             <button class="button button-primary" type="submit">
-                                <span data-icon="search"></span>Find a stay
+                                <span data-icon="search"></span>Search hotels
                             </button>
                         </div>
                         <p class="form-status" id="home-search-status" role="status"></p>
@@ -140,10 +121,9 @@
             <section class="container destinations" aria-labelledby="destinations-heading">
                 <div class="section-heading">
                     <div>
-                        <p class="eyebrow">Featured destinations</p>
-                        <h2 id="destinations-heading">Choose a destination</h2>
+                        <h2 id="destinations-heading">Find your next stay</h2>
                         <p class="muted">
-                            Browse Paris, Dubai, and the Maldives, or explore all six destinations.
+                            Explore a few of the hotels in our collection.
                         </p>
                     </div>
                     <a class="button button-ghost" href="search-results.html"
@@ -151,48 +131,42 @@
                     ></a>
                 </div>
                 <div class="grid-3">
-                    <a class="destination-card" href="search-results.html?destination=Paris"
-                        ><img
-                            src="image/destination-4.jpg"
-                            alt="Paris rooftops and streets at dusk"
-                            width="400"
-                            height="305"
-                            loading="lazy" />
-                        <div class="destination-caption">
-                            <div>
-                                <h3>Paris</h3>
-                                <p>Cafés, galleries, and city walks</p>
+                    <article class="home-hotel">
+                        <img src="image/1.jpg" alt="Hotel room with windows overlooking the city" width="480" height="320" loading="lazy" />
+                        <div class="home-hotel-body">
+                            <p class="home-hotel-location">Astana, Kazakhstan</p>
+                            <h3>Grand Palace Hotel</h3>
+                            <p class="home-hotel-description">A city stay with an indoor pool, fitness room, and restaurant.</p>
+                            <div class="home-hotel-bottom">
+                                <p class="home-hotel-price">$120<small>per night</small></p>
+                                <a class="button button-primary button-small" href="hotel-detail.html?hotel=grand-palace">View details</a>
                             </div>
-                            <span data-icon="arrow"></span></div
-                    ></a>
-                    <a class="destination-card" href="search-results.html?destination=Dubai"
-                        ><img
-                            src="image/destination-5.jpg"
-                            alt="Dubai skyline in warm evening light"
-                            width="400"
-                            height="305"
-                            loading="lazy" />
-                        <div class="destination-caption">
-                            <div>
-                                <h3>Dubai</h3>
-                                <p>Skyline views and waterfront walks</p>
+                        </div>
+                    </article>
+                    <article class="home-hotel">
+                        <img src="image/destination-8.jpg" alt="A quiet resort pool with loungers" width="480" height="320" loading="lazy" />
+                        <div class="home-hotel-body">
+                            <p class="home-hotel-location">Miami, United States</p>
+                            <h3>Ocean View Resort</h3>
+                            <p class="home-hotel-description">A resort stay with a pool and space to slow down.</p>
+                            <div class="home-hotel-bottom">
+                                <p class="home-hotel-price">$220<small>per night</small></p>
+                                <a class="button button-primary button-small" href="hotel-detail.html?hotel=ocean-view">View details</a>
                             </div>
-                            <span data-icon="arrow"></span></div
-                    ></a>
-                    <a class="destination-card" href="search-results.html?destination=Maldives"
-                        ><img
-                            src="image/destination-1.jpg"
-                            alt="Sunlight over a tropical beach"
-                            width="400"
-                            height="305"
-                            loading="lazy" />
-                        <div class="destination-caption">
-                            <div>
-                                <h3>Maldives</h3>
-                                <p>Beaches, pools, and island stays</p>
+                        </div>
+                    </article>
+                    <article class="home-hotel">
+                        <img src="image/3.jpg" alt="A comfortable guest bedroom" width="480" height="320" loading="lazy" />
+                        <div class="home-hotel-body">
+                            <p class="home-hotel-location">Almaty, Kazakhstan</p>
+                            <h3>Comfort City Hotel</h3>
+                            <p class="home-hotel-description">A comfortable base for exploring the city, with free Wi-Fi.</p>
+                            <div class="home-hotel-bottom">
+                                <p class="home-hotel-price">$85<small>per night</small></p>
+                                <a class="button button-primary button-small" href="hotel-detail.html?hotel=comfort-city">View details</a>
                             </div>
-                            <span data-icon="arrow"></span></div
-                    ></a>
+                        </div>
+                    </article>
                 </div>
                 <div class="benefits">
                     <div class="benefit">
@@ -220,18 +194,17 @@
             </section>
             <section class="container story-banner" aria-labelledby="story-heading">
                 <img
-                    src="image/destination-8.jpg"
-                    alt="A quiet resort pool surrounded by greenery"
+                    src="image/destination-6.jpg"
+                    alt="A camera, map and travel notebook"
                     width="600"
                     height="350"
                     loading="lazy"
                 />
                 <div>
-                    <p class="eyebrow">Travel extras</p>
                     <h2 id="story-heading">Add transport or a tour</h2>
                     <p class="lead">
-                        Estimate an airport transfer, rental car, or guided city tour, then add one
-                        to your demo booking.
+                        Estimate an airport transfer, rental car, or guided city tour, then add one to your
+                        demo booking.
                     </p>
                     <a class="button button-primary" href="services.html"
                         >Explore travel services <span data-icon="arrow"></span
@@ -241,7 +214,6 @@
             <section class="container" aria-labelledby="faq-heading">
                 <div class="section-heading">
                     <div>
-                        <p class="eyebrow">About the demo</p>
                         <h2 id="faq-heading">Booking questions</h2>
                     </div>
                     <a class="button button-ghost" href="about.html#contact"
@@ -252,24 +224,24 @@
                     <details>
                         <summary>Is this a real booking service?</summary>
                         <p>
-                            BookingApp is a student travel project. The stays and prices are
-                            illustrative. You can explore, create a local demo account and save a
-                            demo trip, but no real reservation or payment is made.
+                            BookingApp is a student travel project. The stays and prices are illustrative. You
+                            can explore, create a local demo account and save a demo trip, but no real
+                            reservation or payment is made.
                         </p>
                     </details>
                     <details>
                         <summary>Where are my saved stays and trips?</summary>
                         <p>
-                            Log in and open My trips to see your saved stays and demo bookings. Your
-                            data stays in this browser. Clearing browser storage removes it; it does
-                            not sync between devices.
+                            Log in and open My trips to see your saved stays and demo bookings. Your data
+                            stays in this browser. Clearing browser storage removes it; it does not sync
+                            between devices.
                         </p>
                     </details>
                     <details>
                         <summary>Can I cancel a demo booking?</summary>
                         <p>
-                            Yes. Open your profile, find the trip and choose Cancel booking. You
-                            will be asked to confirm before its status changes.
+                            Yes. Open your profile, find the trip and choose Cancel booking. You will be asked
+                            to confirm before its status changes.
                         </p>
                     </details>
                 </div>
@@ -277,11 +249,10 @@
             <section class="container">
                 <div class="newsletter">
                     <div>
-                        <p class="eyebrow">Newsletter preference</p>
                         <h2>Save an email preference</h2>
                         <p>
-                            Save a newsletter preference on this device. This student demo does not
-                            send emails.
+                            Save a newsletter preference on this device. This student demo does not send
+                            emails.
                         </p>
                     </div>
                     <form id="subscribe-form" novalidate>
@@ -310,20 +281,14 @@
             <div class="container">
                 <div class="footer-top">
                     <div>
-                        <a href="index.html" class="brand"
-                            ><span class="brand-mark" data-icon="compass"></span>BookingApp.</a
-                        >
-                        <p>
-                            Compare stays, check the weather,<br />and keep your travel plans
-                            together.
-                        </p>
+                        <a href="index.html" class="brand">BookingApp</a>
+                        <p>Compare stays, check the weather,<br />and keep your travel plans together.</p>
                     </div>
                     <div class="footer-links">
                         <h3>Explore</h3>
                         <a href="search-results.html">All stays</a
                         ><a href="hotel-detail.html?hotel=grand-palace">Featured stay</a
-                        ><a href="services.html">Travel services</a
-                        ><a href="booking.html">Plan a trip</a>
+                        ><a href="services.html">Travel services</a><a href="booking.html">Plan a trip</a>
                     </div>
                     <div class="footer-links">
                         <h3>Account and help</h3>
@@ -340,9 +305,7 @@
         </footer>
         <div id="notification" class="notification" role="status" aria-live="polite" hidden></div>
         <noscript
-            ><p class="container">
-                Enable JavaScript for search, accounts, and demo bookings.
-            </p></noscript
+            ><p class="container">Enable JavaScript for search, accounts, and demo bookings.</p></noscript
         >
     </body>
 </html>
